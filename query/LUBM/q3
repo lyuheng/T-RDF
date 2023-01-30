@@ -1,0 +1,7 @@
+SELECT ?x ?y ?z 
+WHERE 
+{
+    ?z <subOrganizationOf> ?y . 
+    ?x <memberOf> ?z . 
+    ?x <undergraduateDegreeFrom> ?y . 
+}

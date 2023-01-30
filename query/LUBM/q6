@@ -1,0 +1,7 @@
+SELECT ?X ?Z 
+WHERE 
+{ 
+  ?X <teacherOf> <http://www.Department0.University0.edu/Course1> .
+  ?Z <PU1> <http://www.Department0.University0.edu/Course1> . 
+  ?Z <advisor> ?X .
+}

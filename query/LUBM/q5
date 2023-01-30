@@ -1,0 +1,7 @@
+SELECT ?S1 ?T
+WHERE
+{
+  ?S1 <advisor> ?T .
+  ?S1 <undergraduateDegreeFrom> <http://www.University222.edu> .
+  ?T <undergraduateDegreeFrom> <http://www.University222.edu> .
+}

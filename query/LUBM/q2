@@ -1,0 +1,7 @@
+SELECT ?X ?Y ?Z
+WHERE 
+{ 
+  ?X <teacherOf> ?Y .
+  ?Z <takesCourse> ?Y . 
+  ?Z <advisor> ?X .
+}

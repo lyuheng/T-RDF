@@ -1,0 +1,8 @@
+SELECT ?S ?T ?R ?X
+WHERE
+{
+  ?S <advisor> ?T .
+  ?T <doctoralDegreeFrom> ?X .
+  ?S <undergraduateDegreeFrom> ?X .
+  ?T <researchInterest> ?R .
+}
