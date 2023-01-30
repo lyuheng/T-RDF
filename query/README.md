@@ -112,3 +112,69 @@ WHERE {
     ?a1 <isMarriedTo> ?a2 .
 }
 ```
+
+## LUBM
+### Q1: find student and his advisor that got their UG degrees from the same university.
+```
+SELECT ?S ?T
+WHERE
+{
+  ?S  <advisor>  ?T .
+  ?S  <undergraduateDegreeFrom>  ?X .
+  ?T  <undergraduateDegreeFrom>  ?X .
+}
+```
+
+### Q2: find the course a student take is taught by the student's advisor.
+```
+SELECT ?X ?Y ?Z
+WHERE 
+{ 
+  ?X <teacherOf> ?Y .
+  ?Z <takesCourse> ?Y . 
+  ?Z <advisor> ?X .
+}
+```
+
+### Q3: find affiliation people belong to is where they got their UG degrees.
+```
+SELECT ?x ?y ?z 
+WHERE 
+{
+    ?z <subOrganizationOf> ?y . 
+    ?x <memberOf> ?z . 
+    ?x <undergraduateDegreeFrom> ?y . 
+}
+```
+
+### Q4: find the place where student's UG and advisor's PhD are the same, and advisor's research interest.
+```
+SELECT ?S ?T ?R ?X
+WHERE
+{
+  ?S <advisor> ?T .
+  ?T <doctoralDegreeFrom> ?X .
+  ?S <undergraduateDegreeFrom> ?X .
+  ?T <researchInterest> ?R .
+}
+```
+### Q5: find student and his advisor and their common relation to University222.
+```
+SELECT ?S1 ?T
+WHERE
+{
+  ?S1 <advisor> ?T .
+  ?S1 <PU1> <http://www.University222.edu> .
+  ?T <PU1> <http://www.University222.edu> .
+}
+```
+### Q6: find the relation of student and his advisor's course. 
+```
+SELECT ?X ?Y ?Z 
+WHERE 
+{ 
+  ?X <teacherOf> ?Y .
+  ?Z <PU1> ?Y . 
+  ?Z <advisor> ?X .
+}
+```
