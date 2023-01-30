@@ -1,0 +1,10 @@
+SELECT ?a1 ?a2 ?x
+WHERE  
+{ 
+    ?a1 <diedOnDate> ?d1 . 
+    ?a2 <diedOnDate> ?d2 . 
+    ?a1 <wasBornIn> ?x . 
+    ?a2 <wasBornIn> ?x . 
+    ?a1 <hasFamilyName> ?name .
+    ?a2 <hasFamilyName> ?name .
+}
