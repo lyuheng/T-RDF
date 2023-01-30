@@ -30,7 +30,7 @@ THREAD_NUM: Number of threads used in the server.
 ### Step 3
 Open a new terminal as client side, go to <code>client</code> folder, use <code>make</code> to compile and <code>./run</code> to start client.
 
-Copy your query file **path** (absolute path is recommended) in the terminal, press enter and the results will be shown in the server side.
+Copy your query file <em>path</em> (absolute path is recommended) in the terminal, press enter and the results will be shown in the server side.
 
 
 ## RDF Data Acquisition
