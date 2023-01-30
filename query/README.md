@@ -58,3 +58,57 @@ WHERE {
     ?a2 <wasBornIn> ?city1 .
 }
 ```
+
+## YAGO-2.5.3
+### Q1: finding two different people who acted in the same movie and places they were born in.
+```
+SELECT ?n1 ?n2 ?city1 ?city2
+WHERE 
+{
+    ?a1 <hasFamilyName> ?n1 .
+    ?a2 <hasFamilyName> ?n2 .
+    ?a1 <wasBornIn> ?city1 . 
+    ?a2 <wasBornIn> ?city2 . 
+    ?a1 <actedIn> ?m . 
+    ?a2 <actedIn> ?m . 
+}
+```
+### Q2: finding two different people who were born in the same place and had the same family name.
+```
+SELECT ?a1 ?a2 ?x
+WHERE  
+{ 
+    ?a1 <diedOnDate> ?d1 . 
+    ?a2 <diedOnDate> ?d2 . 
+    ?a1 <wasBornIn> ?x . 
+    ?a2 <wasBornIn> ?x . 
+    ?a1 <hasFamilyName> ?name .
+    ?a2 <hasFamilyName> ?name .
+}
+```
+### Q3: finding two different people who were born in the same place, at the same time, and had won the same award.
+```
+SELECT ?a1 ?a2 ?city1 ?d1
+WHERE 
+{
+    ?a1 <hasWonPrize> ?award .
+    ?a2 <hasWonPrize> ?award .
+    ?a1 <wasBornIn> ?city1 .
+    ?a2 <wasBornIn> ?city1 .
+    ?a1 <wasBornOnDate> ?d1 .
+    ?a2 <wasBornOnDate> ?d1 .
+}
+```
+### Q4: finding a couple who had won the same award.
+```
+SELECT ?n1 ?n2 ?award1 ?city1
+WHERE { 
+    ?a1 <hasFamilyName> ?n1 .
+    ?a2 <hasFamilyName> ?n2 .
+    ?a1 <hasWonPrize> ?award1 . 
+    ?a2 <hasWonPrize> ?award2 . 
+    ?a1 <wasBornIn> ?city1 . 
+    ?a2 <wasBornIn> ?city2 . 
+    ?a1 <isMarriedTo> ?a2 .
+}
+```
