@@ -1,9 +1,3 @@
-/*
- * Database.cpp
- *
- *  Created on: 2014-6-20
- *      Author: liyouhuan
- */
 #include "Database.h"
 #include "../intersection/computesetintersection.h"
 #include <assert.h>
@@ -1572,6 +1566,7 @@ bool Database::p2s_p2o(int** _p_id_tuples, int _id_tuples_max)
 
 	// second-order computation
 	int temp_count; 
+	int *temp_buffer = new int[entity_num+literal_num];
 	for (int i = 0; i < this->pre_num; ++i)
 	{
 		for (int j = 0; j < this->pre_num; ++j)
@@ -1598,16 +1593,18 @@ bool Database::p2s_p2o(int** _p_id_tuples, int _id_tuples_max)
 			int *j_oid_p = p2o + j_oid_start;
 
 			// [ss, oo] [s,o] less comes first
-			ComputeSetIntersection::ComputeCandidates(i_sid_p, i_sid_len, j_sid_p, j_sid_len, temp_count);
+			ComputeSetIntersection::ComputeCandidates(i_sid_p, i_sid_len, j_sid_p, j_sid_len, temp_buffer, temp_count);
 			InterDict[counter1] = temp_count;
-			ComputeSetIntersection::ComputeCandidates(i_sid_p, i_sid_len, j_oid_p, j_oid_len, temp_count);
+			ComputeSetIntersection::ComputeCandidates(i_sid_p, i_sid_len, j_oid_p, j_oid_len, temp_buffer, temp_count);
 			InterDict[this->pre_num*this->pre_num+counter1] = temp_count;
-			ComputeSetIntersection::ComputeCandidates(i_oid_p, i_oid_len, j_sid_p, j_sid_len, temp_count);
+			ComputeSetIntersection::ComputeCandidates(i_oid_p, i_oid_len, j_sid_p, j_sid_len, temp_buffer, temp_count);
 			InterDict[this->pre_num*this->pre_num+counter2] = temp_count;
-			ComputeSetIntersection::ComputeCandidates(i_oid_p, i_oid_len, j_oid_p, j_oid_len, temp_count);
+			ComputeSetIntersection::ComputeCandidates(i_oid_p, i_oid_len, j_oid_p, j_oid_len, temp_buffer, temp_count);
 			InterDict[counter2] = temp_count;
 		}
 	}
+	
+	delete[] temp_buffer;
 
 	FILE *inter_fp = fopen((getStorePath() + "/IntersectDict.dict").c_str(), "wb");
 	fwrite(InterDict, sizeof(int), this->pre_num*this->pre_num*2, inter_fp);
