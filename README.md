@@ -43,7 +43,12 @@ For exmaple:
 ```
 
 ### Step 3
-Open a new terminal as client side, go to <code>client</code> folder, use <code>make</code> to compile and <code>./run</code> to start client.
+Open a new terminal as client side, run following commands to start client:
+```
+cd client
+make
+./run
+```
 
 Copy your query file <em>path</em> in the terminal after "Please enter your query ..." is displayed on the server side, press enter and the results will be shown in the server side.
 
