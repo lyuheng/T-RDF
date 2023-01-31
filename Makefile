@@ -9,7 +9,7 @@ objfile= $(objdir)Bstr.o $(objdir)Database.o $(objdir)KVstore.o $(objdir)SPARQLq
 	 
 inc=-I./tools/libantlr3c-3.4/ -I./tools/libantlr3c-3.4/include
 
-all: lib_antlr gload gquery gserver gclient run
+all: gload gquery gserver gclient run
 
 run: $(objdir)run.o $(objfile)
 	$(CC) -lpthread -march=native -o run $(objdir)run.o $(objfile) lib/libantlr.a 
