@@ -158,7 +158,7 @@ WHERE
   ?T <researchInterest> ?R .
 }
 ```
-### Q5: find student and his advisor and their common relation to University222.
+### Q5: find student and his advisor and their common relationship to University222.
 ```
 SELECT ?S1 ?T
 WHERE
@@ -168,7 +168,7 @@ WHERE
   ?T <PU1> <http://www.University222.edu> .
 }
 ```
-### Q6: find the relation of student and his advisor's course. 
+### Q6: find the relationship of student and his advisor's course. 
 ```
 SELECT ?X ?Y ?Z 
 WHERE 
