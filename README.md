@@ -43,7 +43,7 @@ For exmaple:
 ```
 
 ### Step 3
-Open a new terminal as client side, run following commands to start client:
+Open a new terminal as client side (should be on the same machine as server), run following commands to start client:
 ```
 cd client
 make
