@@ -1,3 +1,4 @@
+mkdir -p lib, objs
 rm -rf tools/libantlr3c-3.4/
 cd tools; tar -zxvf libantlr3c-3.4.tar.gz
 cd libantlr3c-3.4/;  ./configure --enable-64bit; make; cd ../../
