@@ -2,7 +2,6 @@
 
 ## Compile
 Under the root directory of the project, use following commands to compile.
-```
 chmod 755 ./scripts/pre.sh ./experiment/*
 ./scripts/pre.sh
 make
