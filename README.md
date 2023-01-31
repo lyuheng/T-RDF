@@ -1,7 +1,11 @@
 # T-RDF: A Task-Based Parallel System for Efficiently Answering SPARQL Queries on RDF Data
 
 ## Compile
-Under the root directory of the project, use <code>make</code> to compile.
+Under the root directory of the project, use following commands to compile.
+```
+./scripts/pre.sh
+make
+```
 
 ## Usage
 ### Step 1 (If Step 1 has been done before, please directly go to Step 2)
