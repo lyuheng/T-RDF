@@ -73,12 +73,13 @@ Database::~Database()
 
 bool Database::load()
 {
-    bool flag = (this->vstree)->loadTree();
-    if (!flag)
-    {
-        cerr << "load tree error. @Database::load()" << endl;
-        return false;
-    }
+	bool flag;
+//     bool flag = (this->vstree)->loadTree();
+//     if (!flag)
+//     {
+//         cerr << "load tree error. @Database::load()" << endl;
+//         return false;
+//     }
 
     flag = this->loadDBInfoFile();
     if (!flag)
@@ -324,12 +325,12 @@ bool Database::build(const string& _rdf_file)
     std::string _entry_file = this->getSignatureBFile();
     (this->kvstore)->open();
 
-    cout << "begin build VS-Tree on " << _rdf_file << "..." << endl;
-    (this->vstree)->buildTree(_entry_file);
+//     cout << "begin build VS-Tree on " << _rdf_file << "..." << endl;
+//     (this->vstree)->buildTree(_entry_file);
 
-    long tv_build_end = util::get_cur_time();
-    cout << "after build, used " << (tv_build_end - tv_build_begin) << "ms." << endl;
-    cout << "finish build VS-Tree." << endl;
+//     long tv_build_end = util::get_cur_time();
+//     cout << "after build, used " << (tv_build_end - tv_build_begin) << "ms." << endl;
+//     cout << "finish build VS-Tree." << endl;
 
     return true;
 }
