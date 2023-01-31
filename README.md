@@ -46,6 +46,9 @@ Open a new terminal as client side, go to <code>client</code> folder, use <code>
 
 Copy your query file <em>path</em> (absolute path is recommended) in the terminal after "Please enter your query ..." is displayed on the server side, press enter and the results will be shown in the server side.
 
+If everything goes right, you will see something like 
+![result](https://github.com/lyuheng/T-RDF/blob/main/demo/lubm_q1_result.png)
+
 
 ## RDF Data Acquisition
 
