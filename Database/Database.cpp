@@ -136,6 +136,8 @@ bool Database::load()
 	FILE *fp_inter = fopen((getStorePath() + "/IntersectDict.dict").c_str(), "rb");
 	fread(IntersectDict, sizeof(int), this->pre_num*this->pre_num*2, fp_inter);
 	cout << "Read Intersection Dict Done." << endl;
+	
+	cout << "Please enter your query ..." << endl;
 
     return true;
 }
