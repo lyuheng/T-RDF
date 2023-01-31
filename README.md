@@ -28,7 +28,7 @@ THREAD_NUM: Number of threads used in the server.
 
 <em>Caveat</em>: If you see segment fault is popped out immediately, please use following command to clear messages in IPC.
 ```
-./experiment/clear
+./experiment/clean
 ```
 
 ### Step 3
