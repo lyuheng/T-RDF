@@ -3,6 +3,7 @@
 ## Compile
 Under the root directory of the project, use following commands to compile.
 ```
+chmod 755 ./scripts/pre.sh ./experiment/*
 ./scripts/pre.sh
 make
 ```
@@ -44,7 +45,12 @@ For exmaple:
 ### Step 3
 Open a new terminal as client side, go to <code>client</code> folder, use <code>make</code> to compile and <code>./run</code> to start client.
 
-Copy your query file <em>path</em> (absolute path is recommended) in the terminal after "Please enter your query ..." is displayed on the server side, press enter and the results will be shown in the server side.
+Copy your query file <em>path</em> in the terminal after "Please enter your query ..." is displayed on the server side, press enter and the results will be shown in the server side.
+
+For example, copy the following path in the client side
+```
+./query/LUBM/q1
+```
 
 If everything goes right, you will see something like 
 ![result](https://github.com/lyuheng/T-RDF/blob/main/demo/lubm_q1_result.png)
