@@ -1,10 +1,3 @@
-/*
- * database.h
- *
- *  Created on: 2014-6-20
- *      Author: liyouhuan
- */
-
 #ifndef DATABASE_H_
 #define DATABASE_H_
 #include<iostream>
