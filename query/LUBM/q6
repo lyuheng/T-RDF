@@ -1,7 +1,7 @@
 SELECT ?X ?Y ?Z 
 WHERE 
 { 
-  ?X <teacherOf> ?Y .
+  ?X <http://swat.cse.lehigh.edu/onto/univ-bench.owl#teacherOf> ?Y .
   ?Z <PU1> ?Y . 
-  ?Z <advisor> ?X .
+  ?Z <http://swat.cse.lehigh.edu/onto/univ-bench.owl#advisor> ?X .
 }
