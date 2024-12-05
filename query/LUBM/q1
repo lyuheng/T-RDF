@@ -1,7 +1,7 @@
 SELECT ?S ?T
 WHERE
 {
-  ?S  <advisor>  ?T .
-  ?S  <undergraduateDegreeFrom>  ?X .
-  ?T  <undergraduateDegreeFrom>  ?X .
+  ?S  <http://swat.cse.lehigh.edu/onto/univ-bench.owl#advisor>  ?T .
+  ?S  <http://swat.cse.lehigh.edu/onto/univ-bench.owl#undergraduateDegreeFrom>  ?X .
+  ?T  <http://swat.cse.lehigh.edu/onto/univ-bench.owl#undergraduateDegreeFrom>  ?X .
 }
