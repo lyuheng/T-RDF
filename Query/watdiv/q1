@@ -1,0 +1,6 @@
+SELECT ?v0 ?v1 ?v2 ?v3 
+WHERE {
+	?v0	<http://schema.org/description>	?v1 .
+	?v0	<http://schema.org/keywords>	?v2 .
+	?v0	<http://schema.org/language>	?v3 .
+}
