@@ -1,0 +1,8 @@
+SELECT ?X ?Y ?Z ?W
+WHERE 
+{ 
+  ?X <4> ?Y .
+  ?Z <14> ?Y . 
+  ?Z <15> ?W .
+}
+#EOQ#
