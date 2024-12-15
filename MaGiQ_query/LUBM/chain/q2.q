@@ -5,4 +5,4 @@ WHERE
     ?x <13> ?z . 
     ?x <5> ?w . 
 }
-#EOQ
+#EOQ#
