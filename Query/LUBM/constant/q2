@@ -1,0 +1,7 @@
+SELECT ?X ?Z
+WHERE 
+{ 
+  ?X <http://swat.cse.lehigh.edu/onto/univ-bench.owl#teacherOf> <http://www.Department9.University1.edu/Course27> .
+  ?Z <http://swat.cse.lehigh.edu/onto/univ-bench.owl#takesCourse> <http://www.Department9.University1.edu/Course27> . 
+  ?Z <http://swat.cse.lehigh.edu/onto/univ-bench.owl#advisor> ?X .
+}

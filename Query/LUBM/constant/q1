@@ -1,0 +1,7 @@
+SELECT ?S ?T
+WHERE
+{
+  ?S <http://swat.cse.lehigh.edu/onto/univ-bench.owl#advisor> ?T .
+  ?S <http://swat.cse.lehigh.edu/onto/univ-bench.owl#undergraduateDegreeFrom> <http://www.University222.edu> .
+  ?T <http://swat.cse.lehigh.edu/onto/univ-bench.owl#undergraduateDegreeFrom> <http://www.University222.edu> .
+}
