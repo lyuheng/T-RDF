@@ -1,0 +1,7 @@
+SELECT ?x ?y ?z ?w
+WHERE 
+{
+    ?z <http://swat.cse.lehigh.edu/onto/univ-bench.owl#subOrganizationOf> ?y . 
+    ?x <http://swat.cse.lehigh.edu/onto/univ-bench.owl#memberOf> ?z . 
+    ?x <http://swat.cse.lehigh.edu/onto/univ-bench.owl#undergraduateDegreeFrom> ?w . 
+}
