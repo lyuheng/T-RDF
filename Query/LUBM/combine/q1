@@ -5,5 +5,4 @@ WHERE
   ?Z <http://swat.cse.lehigh.edu/onto/univ-bench.owl#takesCourse> ?Y . 
   ?Z <http://swat.cse.lehigh.edu/onto/univ-bench.owl#advisor> ?X .
   ?X <http://swat.cse.lehigh.edu/onto/univ-bench.owl#emailAddress> ?W .
-  ?X <http://swat.cse.lehigh.edu/onto/univ-bench.owl#telephone> ?K .
 }
