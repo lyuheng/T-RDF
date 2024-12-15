@@ -1,6 +1,6 @@
-SELECT ?x ?y ?z WHERE { 
-  ?x <4> ?y .
-  ?z <14> ?y . 
-  ?z <15> ?w .
+SELECT ?x ?y ?z WHERE {
+        ?x <4> ?y .
+        ?z <14> ?y .
+        ?z <15> ?x .
 }
 #EOQ#
