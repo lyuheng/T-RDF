@@ -1,0 +1,6 @@
+SELECT ?S ?T WHERE {
+  ?S  <15>  ?T .
+  ?S  <5>  ?X .
+  ?T  <5>  ?X .
+}
+#EOQ#
