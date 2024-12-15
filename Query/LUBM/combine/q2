@@ -1,4 +1,4 @@
-SELECT ?x ?y ?z ?w ?k
+SELECT ?x ?y ?z ?w
 WHERE 
 {
     ?z <http://swat.cse.lehigh.edu/onto/univ-bench.owl#subOrganizationOf> ?y . 

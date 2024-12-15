@@ -1,4 +1,4 @@
-SELECT ?X ?Y ?Z ?W ?K
+SELECT ?X ?Y ?Z ?W
 WHERE 
 { 
   ?X <http://swat.cse.lehigh.edu/onto/univ-bench.owl#teacherOf> ?Y .
