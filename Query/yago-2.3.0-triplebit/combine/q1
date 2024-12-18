@@ -1,0 +1,11 @@
+SELECT ?n1 ?n2 ?city1 ?city2 
+WHERE { 
+    ?a1 <hasPreferredName> ?n1 . 
+    ?a2 <hasPreferredName> ?n2 . 
+    ?a1 <wasBornIn> ?city1 . 
+    ?a2 <wasBornIn> ?city2 . 
+    ?a1 <actedIn> ?m . 
+    ?a2 <actedIn> ?m . 
+    ?a1 <hasWonPrize> ?w .
+    ?a2 <hasWonPrize> ?w .
+}
