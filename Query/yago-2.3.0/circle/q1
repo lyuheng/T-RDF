@@ -1,6 +1,6 @@
-SELECT ?n1 ?n2 ?a1
+SELECT ?n ?a1 ?a2
 WHERE { 
-    ?a1 <hasPreferredName> ?n1 . 
-    ?n2 <hasPreferredName> ?n1 .
-    ?a1 <hasAcademicAdvisor> ?n2 .
+    ?a1 <hasPreferredName> ?n . 
+    ?a1 <hasAcademicAdvisor> ?a2 .
+    ?a2 <hasPreferredName> ?n .
 }
