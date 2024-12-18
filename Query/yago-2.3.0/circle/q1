@@ -1,6 +1,6 @@
 SELECT ?n ?a1 ?a2
 WHERE { 
     ?a1 <hasPreferredName> ?n . 
-    ?a1 <hasAcademicAdvisor> ?a2 .
+    ?a1 <isMarriedTo> ?a2 .
     ?a2 <hasPreferredName> ?n .
 }
