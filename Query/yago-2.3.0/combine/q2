@@ -1,4 +1,4 @@
-SELECT ?n1 ?n2 
+SELECT ?n1 ?n2  ?name
 WHERE { 
     ?a1 <hasPreferredName> ?n1 . 
     ?a2 <hasPreferredName> ?n2 . 
