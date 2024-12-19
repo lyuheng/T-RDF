@@ -7,5 +7,5 @@ WHERE {
     ?a1 <actedIn> ?m . 
     ?a2 <actedIn> ?m . 
     ?a1 <PU1> <Emmy_Award> .
-    ?a2 <PU1> <Emmy_Award> .
+    ?a2 <hasWonPrize> <Emmy_Award> .
 }
