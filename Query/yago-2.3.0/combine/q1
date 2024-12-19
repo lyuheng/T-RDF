@@ -1,4 +1,4 @@
-SELECT ?n1 ?n2 ?city1 ?city2 
+SELECT ?n1 ?n2 ?city1 ?city2 ?w
 WHERE { 
     ?a1 <hasPreferredName> ?n1 . 
     ?a2 <hasPreferredName> ?n2 . 
