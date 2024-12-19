@@ -1,4 +1,4 @@
-SELECT ?n1 ?n2  ?name
+SELECT ?n1 ?n2
 WHERE { 
     ?a1 <hasPreferredName> ?n1 . 
     ?a2 <hasPreferredName> ?n2 . 
@@ -6,6 +6,6 @@ WHERE {
     ?a2 <diedOnDate> ?d2 . 
     ?a1 <wasBornIn> ?x . 
     ?a2 <wasBornIn> ?x . 
-    ?a1 <hasFamilyName> "Simpson" .
-    ?a2 <hasFamilyName> "Simpson" .
+    ?a1 <hasFamilyName> ?name .
+    ?a2 <hasFamilyName> ?name .
 }
