@@ -6,6 +6,6 @@ WHERE {
     ?a2 <diedOnDate> ?d2 . 
     ?a1 <wasBornIn> ?x . 
     ?a2 <wasBornIn> ?x . 
-    ?a1 <hasFamilyName> ?name .
-    ?a2 <hasFamilyName> ?name .
+    ?a1 <hasFamilyName> "Simpson" .
+    ?a2 <hasFamilyName> "Simpson" .
 }
