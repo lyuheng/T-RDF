@@ -6,6 +6,6 @@ WHERE {
     ?a2 <wasBornIn> ?city2 . 
     ?a1 <actedIn> ?m . 
     ?a2 <actedIn> ?m . 
-    ?a1 <hasWonPrize> <Nobel_Prize_in_Physics> .
-    ?a2 <hasWonPrize> <Nobel_Prize_in_Physics> .
+    ?a1 <hasWonPrize> <Edgar_Award> .
+    ?a2 <hasWonPrize> <Edgar_Award> .
 }
