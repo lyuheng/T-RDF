@@ -1,9 +1,0 @@
-SELECT ?n1 ?n2 ?award1 ?city1
-WHERE { 
-    ?a1 <hasFamilyName> ?n1 .
-    ?a2 <hasFamilyName> ?n2 .
-    ?a1 <hasWonPrize> ?award1 . 
-    ?a2 <hasWonPrize> ?award1 . 
-    ?a1 <wasBornIn> ?city1 . 
-    ?a2 <wasBornIn> ?city1 .
-}

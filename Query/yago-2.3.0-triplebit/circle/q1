@@ -1,6 +1,0 @@
-SELECT ?n ?a1 ?a2
-WHERE { 
-    ?a1 <hasFamilyName> ?n . 
-    ?a2 <hasFamilyName> ?n .
-    ?a1 <hasAcademicAdvisor> ?a2 .
-}
