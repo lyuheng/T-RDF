@@ -1,0 +1,7 @@
+SELECT ?a1 ?city1 ?city2 ?c
+WHERE { 
+    ?a1 <wasBornIn> ?city1 . 
+    ?a1 <diedIn> ?city2 . 
+    ?city1 <isLocatedIn> ?c .
+    ?city2 <isLocatedIn> ?c .   
+}
