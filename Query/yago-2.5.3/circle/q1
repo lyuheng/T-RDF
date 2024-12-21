@@ -1,4 +1,4 @@
-REFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 SELECT ?n ?a1 ?a2
 WHERE { 
     ?a1 rdf:hasFamilyName ?n . 
