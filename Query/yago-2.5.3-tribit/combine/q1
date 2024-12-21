@@ -1,0 +1,11 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?a1 ?a2 ?x
+WHERE  
+{ 
+    ?a1 rdf:diedOnDate ?d1 . 
+    ?a2 rdf:diedOnDate ?d2 . 
+    ?a1 rdf:wasBornIn ?x . 
+    ?a2 rdf:wasBornIn ?x . 
+    ?a1 rdf:hasFamilyName ?name .
+    ?a2 rdf:hasFamilyName ?name .
+}

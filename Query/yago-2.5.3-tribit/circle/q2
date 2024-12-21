@@ -1,0 +1,8 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?a1 ?city1 ?city2 ?c
+WHERE { 
+    ?a1 rdf:wasBornIn ?city1 . 
+    ?a1 rdf:diedIn ?city2 . 
+    ?city1 rdf:isLocatedIn ?c .
+    ?city2 rdf:isLocatedIn ?c .   
+}

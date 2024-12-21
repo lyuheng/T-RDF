@@ -1,0 +1,11 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?a1 ?a2 ?city1 ?d1
+WHERE 
+{
+    ?a1 rdf:hasWonPrize ?award .
+    ?a2 rdf:hasWonPrize ?award .
+    ?a1 rdf:wasBornIn ?city1 .
+    ?a2 rdf:wasBornIn ?city1 .
+    ?a1 rdf:wasBornOnDate ?d1 .
+    ?a2 rdf:wasBornOnDate ?d1 .
+}

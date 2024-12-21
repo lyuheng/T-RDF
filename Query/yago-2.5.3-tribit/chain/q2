@@ -1,0 +1,7 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?n1 ?n2 ?a1 ?a2
+WHERE { 
+    ?a1 rdf:hasFamilyName ?n1 . 
+    ?a2 rdf:hasFamilyName ?n2 .
+    ?a1 rdf:hasAcademicAdvisor ?a2 .
+}
