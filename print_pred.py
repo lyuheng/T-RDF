@@ -10,4 +10,6 @@ for line in lines:
     lst = line.split()
     preds.add(lst[1])
     
-print(preds)
+
+for p in preds:
+    print(p)
