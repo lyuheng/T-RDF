@@ -2,7 +2,7 @@ import sys
 
 f = open(sys.argv[1], 'r')
 
-lines = f.readline()
+lines = f.readlines()
 
 preds = set()
 
