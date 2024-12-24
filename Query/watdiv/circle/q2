@@ -3,6 +3,6 @@ WHERE
 {
 	?v0	<http://schema.org/editor> ?v2 .
     ?v1 <http://schema.org/author> ?v2 .
-    ?v0 <http://schema.org/nationality> ?v3 .
-    ?v1 <http://schema.org/nationality> ?v3 .
+    ?v0 <http://xmlns.com/foaf/givenName> ?v3 .
+    ?v1 <http://xmlns.com/foaf/givenName> ?v3 .
 }
