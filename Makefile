@@ -1,4 +1,4 @@
-CC=g++ -O2
+CC=g++
 objdir=objs/
 objfile= $(objdir)Bstr.o $(objdir)Database.o $(objdir)KVstore.o $(objdir)SPARQLquery.o $(objdir)BasicQuery.o $(objdir)ResultSet.o \
      $(objdir)SigEntry.o $(objdir)Signature.o $(objdir)Triple.o  $(objdir)util.o $(objdir)VSTree.o \
