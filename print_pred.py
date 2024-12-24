@@ -9,7 +9,8 @@ preds = set()
 for line in lines:
     lst = line.strip().split()
 
-    print(lst[1])
+    print(lst)
+
     preds.add(lst[1])
 
     break
