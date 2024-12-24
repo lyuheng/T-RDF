@@ -8,11 +8,6 @@ preds = set()
 
 for line in lines:
     lst = line.split()
-
-    print(lst)
-
     preds.add(lst[1])
-
-    break
     
 print(preds)
