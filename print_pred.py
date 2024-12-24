@@ -7,7 +7,7 @@ lines = f.readline()
 preds = set()
 
 for line in lines:
-    lst = line.strip().split()
+    lst = line.split()
 
     print(lst)
 
