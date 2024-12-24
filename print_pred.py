@@ -8,6 +8,10 @@ preds = set()
 
 for line in lines:
     lst = line.strip().split()
+
+    print(lst[1])
     preds.add(lst[1])
+
+    break
     
 print(preds)
