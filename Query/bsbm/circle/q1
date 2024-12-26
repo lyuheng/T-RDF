@@ -1,0 +1,8 @@
+SELECT ?v1 ?v2 ?v3 ?x 
+WHERE 
+{ 
+  ?v1 <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/producer> ?v3 .
+  ?v2 <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/producer> ?v3 .
+  ?v1 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?x .
+  ?v2 <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?x .
+}
