@@ -3,6 +3,6 @@ WHERE
 { 
   ?v1 <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/producer> ?v3 .
   ?v2 <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/producer> ?v3 .
-  ?v1 <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/productPropertyTextual4> ?x .
-  ?v2 <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/productPropertyTextual4> ?x .
+  ?v1 <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/rating3> ?x .
+  ?v2 <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/rating3> ?x .
 }
