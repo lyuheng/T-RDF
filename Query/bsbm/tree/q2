@@ -1,0 +1,7 @@
+SELECT ?v1 ?v2 ?v3 ?v4
+WHERE 
+{ 
+  ?v1 <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/producer> ?v2 .
+  ?v1 <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/productPropertyNumeric3> ?v3 .
+  ?v1 <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/productPropertyNumeric4> ?v4 .
+}
