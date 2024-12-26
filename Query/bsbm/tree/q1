@@ -1,4 +1,4 @@
-SELECT ?v1 ?v2 ?v3
+SELECT ?v1 ?v2 ?v3 ?v4
 WHERE 
 { 
   ?v1 <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/producer> ?v2 .
