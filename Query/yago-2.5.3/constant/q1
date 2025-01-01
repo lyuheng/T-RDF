@@ -1,9 +1,9 @@
-SELECT ?n1 ?n2 ?award1 ?award2
+SELECT ?n1 ?n2 ?city1
 WHERE { 
     ?a1 <hasFamilyName> ?n1 .
     ?a2 <hasFamilyName> ?n2 .
-    ?a1 <hasWonPrize> ?award1 . 
-    ?a2 <hasWonPrize> ?award2 . 
-    ?a1 <wasBornIn> <Phoenix,_Arizona> . 
-    ?a2 <wasBornIn> <Phoenix,_Arizona> .
+    ?a1 <hasWonPrize> <Grammy_Award> . 
+    ?a2 <hasWonPrize> <Grammy_Award> . 
+    ?a1 <wasBornIn> ?city1 . 
+    ?a2 <wasBornIn> ?city1 .
 }
