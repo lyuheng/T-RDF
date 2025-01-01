@@ -1,0 +1,6 @@
+SELECT ?n1 ?n2 ?a1 
+WHERE { 
+    ?a1 <hasFamilyName> ?n1 . 
+    <Ernest_Lawrence> <hasFamilyName> ?n2 .
+    ?a1 <hasAcademicAdvisor> <Ernest_Lawrence> .
+}
