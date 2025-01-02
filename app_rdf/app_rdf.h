@@ -96,7 +96,7 @@ struct RDFQuery
 
     vector<int> global_task_num;
 
-    RDFQuery(): max_cand_size(0), global_task_num(32, 0);
+    RDFQuery(): max_cand_size(0), global_task_num(32, 0)
     {}
     ~RDFQuery()
     {
