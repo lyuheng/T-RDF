@@ -1635,6 +1635,8 @@ public:
                         t->context.pre_var_num = pre_var_num;
                         add_task(t);
 
+                        global_task_num[thread_id]++;
+
                         if (var_id >= 0)
                             set_visited_arr(false, v);
                     }

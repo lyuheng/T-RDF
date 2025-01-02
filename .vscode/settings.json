@@ -2,6 +2,10 @@
     "files.associations": {
         "*.cpp": "cpp",
         ".gitignore": "cpp",
-        "q1": "cpp"
+        "q1": "cpp",
+        "sstream": "cpp",
+        "utility": "cpp",
+        "fstream": "cpp",
+        "string": "cpp"
     }
 }
