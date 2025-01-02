@@ -28,8 +28,6 @@
 using namespace std;
 
 
-vector<int> global_task_num(32, 0);
-
 // Number of idle compers
 atomic<int> global_num_idle(0);
 atomic<bool> global_end_label(false);

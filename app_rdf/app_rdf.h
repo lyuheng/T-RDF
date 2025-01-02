@@ -94,7 +94,9 @@ struct RDFQuery
 
     int max_cand_size;
 
-    RDFQuery(): max_cand_size(0)
+    vector<int> global_task_num;
+
+    RDFQuery(): max_cand_size(0), global_task_num(32, 0);
     {}
     ~RDFQuery()
     {
@@ -1635,7 +1637,7 @@ public:
                         t->context.pre_var_num = pre_var_num;
                         add_task(t);
 
-                        global_task_num[thread_id]++;
+                        q.global_task_num[thread_id]++;
 
                         if (var_id >= 0)
                             set_visited_arr(false, v);
@@ -1841,6 +1843,11 @@ public:
         ftime(&q.end_t);
         totaltime = (q.end_t.time-q.start_t.time)*1000+(double)(q.end_t.millitm-q.start_t.millitm);
         cout<<"Query "<<get_queryID()<<" total time: "<<totaltime << " ms" <<endl;
+
+        int ttl_task_num = 0;
+        for (int i=0; i<32; ++i)
+            ttl_task_num += q.global_task_num[i];
+        std::cout << "task num = " << ttl_task_num + 1 << std::endl;
 
         return false;
     }
