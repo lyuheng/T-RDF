@@ -6,6 +6,7 @@
         "sstream": "cpp",
         "utility": "cpp",
         "fstream": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "vector": "cpp"
     }
 }

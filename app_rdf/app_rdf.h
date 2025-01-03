@@ -448,7 +448,7 @@ public:
             }
             if (in_edge_pre_id.empty() && out_edge_pre_id.empty()) continue;
             
-            /** conduct intersection during phase 1, necessary?
+            //** conduct intersection during phase 1, necessary?
             int* list = NULL;
 	        int len = 0;
             for (auto it = in_edge_pre_id.begin(); it != in_edge_pre_id.end(); ++it)
@@ -483,62 +483,63 @@ public:
 		            cans.intersectList(list, len);
                 // delete[] list;
             }
-            //*/
-            vector<int> approximate_candidate;
-            // oo
-            for (auto it = in_edge_pre_id.begin(); it != in_edge_pre_id.end(); ++it)
-            {
-                for (auto it2 = in_edge_pre_id.begin(); it2 != in_edge_pre_id.end(); ++it2)
-                {
-                    if (*it == *it2)
-                    {
-                        approximate_candidate.push_back(db.preStatDict[4*(*it)+3]);
-                    }
-                    else if (*it < *it2)
-                    {
-                        approximate_candidate.push_back(db.IntersectDict[(*it2)*db.pre_num+(*it)]);
-                    }
-                    else // *it > *it2
-                    {
-                        approximate_candidate.push_back(db.IntersectDict[(*it)*db.pre_num+(*it2)]);
-                    }
-                }
-            }
-            // ss
-            for (auto it = out_edge_pre_id.begin(); it != out_edge_pre_id.end(); ++it)
-            {
-                for (auto it2 = out_edge_pre_id.begin(); it2 != out_edge_pre_id.end(); ++it2)
-                {
-                    if (*it == *it2) 
-                    {
-                        approximate_candidate.push_back(db.preStatDict[4*(*it)+1]);
-                    }
-                    else if (*it < *it2)
-                    {
-                        approximate_candidate.push_back(db.IntersectDict[(*it)*db.pre_num+(*it2)]);
-                    }
-                    else // *it > *it2
-                    {
-                        approximate_candidate.push_back(db.IntersectDict[(*it2)*db.pre_num+(*it)]);
-                    }
-                }
-            }
-            // so
-            for (auto it = out_edge_pre_id.begin(); it != out_edge_pre_id.end(); ++it)
-            {
-                for (auto it2 = in_edge_pre_id.begin(); it2 != in_edge_pre_id.end(); ++it2)
-                {
-                    assert(*it != *it2);
-                    approximate_candidate.push_back(db.IntersectDict[db.pre_num*db.pre_num + (*it)*db.pre_num+(*it2)]);
-                }
-            }
+            // */
 
-            int min_val = approximate_candidate[0];
-            for (int k=1; k < approximate_candidate.size(); ++k)
-            {
-                min_val = min_val < approximate_candidate[k] ? min_val : approximate_candidate[k];
-            }
-            approximate_cands[i] = min_val;
+            // vector<int> approximate_candidate;
+            // // oo
+            // for (auto it = in_edge_pre_id.begin(); it != in_edge_pre_id.end(); ++it)
+            // {
+            //     for (auto it2 = in_edge_pre_id.begin(); it2 != in_edge_pre_id.end(); ++it2)
+            //     {
+            //         if (*it == *it2)
+            //         {
+            //             approximate_candidate.push_back(db.preStatDict[4*(*it)+3]);
+            //         }
+            //         else if (*it < *it2)
+            //         {
+            //             approximate_candidate.push_back(db.IntersectDict[(*it2)*db.pre_num+(*it)]);
+            //         }
+            //         else // *it > *it2
+            //         {
+            //             approximate_candidate.push_back(db.IntersectDict[(*it)*db.pre_num+(*it2)]);
+            //         }
+            //     }
+            // }
+            // // ss
+            // for (auto it = out_edge_pre_id.begin(); it != out_edge_pre_id.end(); ++it)
+            // {
+            //     for (auto it2 = out_edge_pre_id.begin(); it2 != out_edge_pre_id.end(); ++it2)
+            //     {
+            //         if (*it == *it2) 
+            //         {
+            //             approximate_candidate.push_back(db.preStatDict[4*(*it)+1]);
+            //         }
+            //         else if (*it < *it2)
+            //         {
+            //             approximate_candidate.push_back(db.IntersectDict[(*it)*db.pre_num+(*it2)]);
+            //         }
+            //         else // *it > *it2
+            //         {
+            //             approximate_candidate.push_back(db.IntersectDict[(*it2)*db.pre_num+(*it)]);
+            //         }
+            //     }
+            // }
+            // // so
+            // for (auto it = out_edge_pre_id.begin(); it != out_edge_pre_id.end(); ++it)
+            // {
+            //     for (auto it2 = in_edge_pre_id.begin(); it2 != in_edge_pre_id.end(); ++it2)
+            //     {
+            //         assert(*it != *it2);
+            //         approximate_candidate.push_back(db.IntersectDict[db.pre_num*db.pre_num + (*it)*db.pre_num+(*it2)]);
+            //     }
+            // }
+
+            // int min_val = approximate_candidate[0];
+            // for (int k=1; k < approximate_candidate.size(); ++k)
+            // {
+            //     min_val = min_val < approximate_candidate[k] ? min_val : approximate_candidate[k];
+            // }
+            // approximate_cands[i] = min_val;
         }
 
         ftime(&end_t);
@@ -1405,13 +1406,13 @@ public:
                 // IDList can_list = basic_query->getCandidateList(var_id);
                 int v = can_lists[cur_depth][idx[cur_depth]]; // v can be literal
                 
-                bool shouldVar2AddLiteralCandidateWhenJoin = basic_query->isFreeLiteralVariable(var_id) && !basic_query->isAddedLiteralCandidate(var_id);    
+                // bool shouldVar2AddLiteralCandidateWhenJoin = basic_query->isFreeLiteralVariable(var_id) && !basic_query->isAddedLiteralCandidate(var_id);    
                 // bool found_in_id_list = can_list.bsearch_uporder(v) >= 0;
                 // bool found_in_id_list = can_list.getID(ComputeSetIntersection::BinarySearchForGallopingSearchAVX2(can_list.id_list.data(), 0, can_list.size()-1, v)) == v;
 
-                bool found_in_id_list = false;
-                if (var_id >= 0 && db.objIDIsEntityID(v))
-                    found_in_id_list = db._entity_bitset[v]->cover(q.sparql_q.getBasicQuery(0).var_sig[var_id]);
+                bool found_in_id_list = true; // false;
+                // if (var_id >= 0 && db.objIDIsEntityID(v))
+                //     found_in_id_list = db._entity_bitset[v]->cover(q.sparql_q.getBasicQuery(0).var_sig[var_id]);
 
 
                 // cout << "Match ("<< var_id << ", "<< v << ") together" << endl;
@@ -1423,10 +1424,9 @@ public:
 
 
                 //@@: If shouldAddLiteral = true, this variable is a free literal
-                bool should_add_this_literal = shouldVar2AddLiteralCandidateWhenJoin && !db.objIDIsEntityID(v);
-
-                if (found_in_id_list || should_add_this_literal)
-                // if (found_in_id_list)
+                // bool should_add_this_literal = shouldVar2AddLiteralCandidateWhenJoin && !db.objIDIsEntityID(v);
+                // if (found_in_id_list || should_add_this_literal)
+                if (found_in_id_list)
                 {   
                     if (var_id >= 0)
                         set_visited_arr(true, v);
