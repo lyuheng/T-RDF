@@ -1406,8 +1406,8 @@ public:
                 int v = can_lists[cur_depth][idx[cur_depth]]; // v can be literal
                 
                 bool shouldVar2AddLiteralCandidateWhenJoin = basic_query->isFreeLiteralVariable(var_id) && !basic_query->isAddedLiteralCandidate(var_id);    
-                bool found_in_id_list = can_list.bsearch_uporder(v) >= 0;
-                bool found_in_id_list = can_list.getID(ComputeSetIntersection::BinarySearchForGallopingSearchAVX2(can_list.id_list.data(), 0, can_list.size()-1, v)) == v;
+                // bool found_in_id_list = can_list.bsearch_uporder(v) >= 0;
+                // bool found_in_id_list = can_list.getID(ComputeSetIntersection::BinarySearchForGallopingSearchAVX2(can_list.id_list.data(), 0, can_list.size()-1, v)) == v;
 
                 bool found_in_id_list = false;
                 if (var_id >= 0 && db.objIDIsEntityID(v))
