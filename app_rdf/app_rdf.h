@@ -453,12 +453,12 @@ public:
 	        int len = 0;
             for (auto it = in_edge_pre_id.begin(); it != in_edge_pre_id.end(); ++it)
             {
-                // fseek(db.p2o_fp, sizeof(int)*db.preStatDict[4*(*it)+2], SEEK_SET);
-                // len = db.preStatDict[4*(*it)+3];
-                // list = new int[db.preStatDict[4*(*it)+3]];
-                // fread(list, sizeof(int), len, db.p2o_fp);
+                fseek(db.p2o_fp, sizeof(int)*db.preStatDict[4*(*it)+2], SEEK_SET);
                 len = db.preStatDict[4*(*it)+3];
-                list = db.p2o + db.preStatDict[4*(*it)+2];
+                list = new int[db.preStatDict[4*(*it)+3]];
+                fread(list, sizeof(int), len, db.p2o_fp);
+                // len = db.preStatDict[4*(*it)+3];
+                // list = db.p2o + db.preStatDict[4*(*it)+2];
 
                 if(cans.size() == 0)
 		            cans.unionList(list, len);
@@ -469,13 +469,13 @@ public:
 
             for (auto it = out_edge_pre_id.begin(); it != out_edge_pre_id.end(); ++it)
             {
-                // fseek(db.p2s_fp, sizeof(int)*db.preStatDict[4*(*it)], SEEK_SET);
-                // len = db.preStatDict[4*(*it)+1];
-                // list = new int[db.preStatDict[4*(*it)+1]];
-                // fread(list, sizeof(int), len, db.p2s_fp);
-
+                fseek(db.p2s_fp, sizeof(int)*db.preStatDict[4*(*it)], SEEK_SET);
                 len = db.preStatDict[4*(*it)+1];
-                list = db.p2s + db.preStatDict[4*(*it)];
+                list = new int[db.preStatDict[4*(*it)+1]];
+                fread(list, sizeof(int), len, db.p2s_fp);
+
+                // len = db.preStatDict[4*(*it)+1];
+                // list = db.p2s + db.preStatDict[4*(*it)];
 
                 if(cans.size() == 0)
 		            cans.unionList(list, len);
