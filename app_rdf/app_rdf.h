@@ -1831,14 +1831,14 @@ public:
         // db.only_pre_filter_after_join(basic_query);
         // basic_query->dupRemoval_invalidRemoval();
 
-        q.sparql_q.evaPlan.clear();
-        db.genEvaPlan(q.sparql_q.getPatternGroup(), q.sparql_q, 0);
-        db.doEvaPlan(q.sparql_q);
+        // q.sparql_q.evaPlan.clear();
+        // db.genEvaPlan(q.sparql_q.getPatternGroup(), q.sparql_q, 0);
+        // db.doEvaPlan(q.sparql_q);
 
-        q.rs.select_var_num = q.sparql_q.getProjectionsNum();
-        db.getFinalResult(q.sparql_q, q.rs);
+        // q.rs.select_var_num = q.sparql_q.getProjectionsNum();
+        // db.getFinalResult(q.sparql_q, q.rs);
 
-        cout << "Final result is: "  << q.rs.ansNum << endl;
+        // cout << "Final result is: "  << q.rs.ansNum << endl;
         // cout << "Final result is: "  << q.rs.to_str() << endl;
 
         ftime(&q.end_t);
