@@ -1820,13 +1820,18 @@ public:
 
         BasicQuery* basic_query = &q.sparql_q.getBasicQuery(0);
         vector<int *> &result_list = basic_query->getResultList();
+
+        int ttl_res_num = 0;
         cout << "Found by each thread: "; 
         for(int i=0; i<32; ++i)
         {
+            ttl_res_num += q.p_result_list[i].size();
             cout << q.p_result_list[i].size() << " ";
             result_list.insert(result_list.end(), q.p_result_list[i].begin(), q.p_result_list[i].end());
         }
         cout << endl;
+
+        cout << "Final result is: "  << ttl_res_num << endl;
 
         // db.only_pre_filter_after_join(basic_query);
         // basic_query->dupRemoval_invalidRemoval();
