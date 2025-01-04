@@ -1831,7 +1831,7 @@ public:
         }
         cout << endl;
 
-        cout << "Final result is: "  << ttl_res_num << endl;
+        cout << "Final result is: " << ttl_res_num << endl;
 
         // db.only_pre_filter_after_join(basic_query);
         // basic_query->dupRemoval_invalidRemoval();
