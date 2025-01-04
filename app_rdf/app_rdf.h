@@ -448,15 +448,16 @@ public:
             }
             if (in_edge_pre_id.empty() && out_edge_pre_id.empty()) continue;
             
-            //** conduct intersection during phase 1, necessary?
+            /** conduct intersection during phase 1, necessary?
             int* list = NULL;
 	        int len = 0;
             for (auto it = in_edge_pre_id.begin(); it != in_edge_pre_id.end(); ++it)
             {
-                fseek(db.p2o_fp, sizeof(int)*db.preStatDict[4*(*it)+2], SEEK_SET);
-                len = db.preStatDict[4*(*it)+3];
-                list = new int[db.preStatDict[4*(*it)+3]];
-                fread(list, sizeof(int), len, db.p2o_fp);
+                // fseek(db.p2o_fp, sizeof(int)*db.preStatDict[4*(*it)+2], SEEK_SET);
+                // len = db.preStatDict[4*(*it)+3];
+                // list = new int[db.preStatDict[4*(*it)+3]];
+                // fread(list, sizeof(int), len, db.p2o_fp);
+
                 // len = db.preStatDict[4*(*it)+3];
                 // list = db.p2o + db.preStatDict[4*(*it)+2];
 
@@ -469,10 +470,10 @@ public:
 
             for (auto it = out_edge_pre_id.begin(); it != out_edge_pre_id.end(); ++it)
             {
-                fseek(db.p2s_fp, sizeof(int)*db.preStatDict[4*(*it)], SEEK_SET);
-                len = db.preStatDict[4*(*it)+1];
-                list = new int[db.preStatDict[4*(*it)+1]];
-                fread(list, sizeof(int), len, db.p2s_fp);
+                // fseek(db.p2s_fp, sizeof(int)*db.preStatDict[4*(*it)], SEEK_SET);
+                // len = db.preStatDict[4*(*it)+1];
+                // list = new int[db.preStatDict[4*(*it)+1]];
+                // fread(list, sizeof(int), len, db.p2s_fp);
 
                 // len = db.preStatDict[4*(*it)+1];
                 // list = db.p2s + db.preStatDict[4*(*it)];
@@ -483,63 +484,63 @@ public:
 		            cans.intersectList(list, len);
                 // delete[] list;
             }
-            // */
+            //*/
 
-            // vector<int> approximate_candidate;
-            // // oo
-            // for (auto it = in_edge_pre_id.begin(); it != in_edge_pre_id.end(); ++it)
-            // {
-            //     for (auto it2 = in_edge_pre_id.begin(); it2 != in_edge_pre_id.end(); ++it2)
-            //     {
-            //         if (*it == *it2)
-            //         {
-            //             approximate_candidate.push_back(db.preStatDict[4*(*it)+3]);
-            //         }
-            //         else if (*it < *it2)
-            //         {
-            //             approximate_candidate.push_back(db.IntersectDict[(*it2)*db.pre_num+(*it)]);
-            //         }
-            //         else // *it > *it2
-            //         {
-            //             approximate_candidate.push_back(db.IntersectDict[(*it)*db.pre_num+(*it2)]);
-            //         }
-            //     }
-            // }
-            // // ss
-            // for (auto it = out_edge_pre_id.begin(); it != out_edge_pre_id.end(); ++it)
-            // {
-            //     for (auto it2 = out_edge_pre_id.begin(); it2 != out_edge_pre_id.end(); ++it2)
-            //     {
-            //         if (*it == *it2) 
-            //         {
-            //             approximate_candidate.push_back(db.preStatDict[4*(*it)+1]);
-            //         }
-            //         else if (*it < *it2)
-            //         {
-            //             approximate_candidate.push_back(db.IntersectDict[(*it)*db.pre_num+(*it2)]);
-            //         }
-            //         else // *it > *it2
-            //         {
-            //             approximate_candidate.push_back(db.IntersectDict[(*it2)*db.pre_num+(*it)]);
-            //         }
-            //     }
-            // }
-            // // so
-            // for (auto it = out_edge_pre_id.begin(); it != out_edge_pre_id.end(); ++it)
-            // {
-            //     for (auto it2 = in_edge_pre_id.begin(); it2 != in_edge_pre_id.end(); ++it2)
-            //     {
-            //         assert(*it != *it2);
-            //         approximate_candidate.push_back(db.IntersectDict[db.pre_num*db.pre_num + (*it)*db.pre_num+(*it2)]);
-            //     }
-            // }
+            vector<int> approximate_candidate;
+            // oo
+            for (auto it = in_edge_pre_id.begin(); it != in_edge_pre_id.end(); ++it)
+            {
+                for (auto it2 = in_edge_pre_id.begin(); it2 != in_edge_pre_id.end(); ++it2)
+                {
+                    if (*it == *it2)
+                    {
+                        approximate_candidate.push_back(db.preStatDict[4*(*it)+3]);
+                    }
+                    else if (*it < *it2)
+                    {
+                        approximate_candidate.push_back(db.IntersectDict[(*it2)*db.pre_num+(*it)]);
+                    }
+                    else // *it > *it2
+                    {
+                        approximate_candidate.push_back(db.IntersectDict[(*it)*db.pre_num+(*it2)]);
+                    }
+                }
+            }
+            // ss
+            for (auto it = out_edge_pre_id.begin(); it != out_edge_pre_id.end(); ++it)
+            {
+                for (auto it2 = out_edge_pre_id.begin(); it2 != out_edge_pre_id.end(); ++it2)
+                {
+                    if (*it == *it2) 
+                    {
+                        approximate_candidate.push_back(db.preStatDict[4*(*it)+1]);
+                    }
+                    else if (*it < *it2)
+                    {
+                        approximate_candidate.push_back(db.IntersectDict[(*it)*db.pre_num+(*it2)]);
+                    }
+                    else // *it > *it2
+                    {
+                        approximate_candidate.push_back(db.IntersectDict[(*it2)*db.pre_num+(*it)]);
+                    }
+                }
+            }
+            // so
+            for (auto it = out_edge_pre_id.begin(); it != out_edge_pre_id.end(); ++it)
+            {
+                for (auto it2 = in_edge_pre_id.begin(); it2 != in_edge_pre_id.end(); ++it2)
+                {
+                    assert(*it != *it2);
+                    approximate_candidate.push_back(db.IntersectDict[db.pre_num*db.pre_num + (*it)*db.pre_num+(*it2)]);
+                }
+            }
 
-            // int min_val = approximate_candidate[0];
-            // for (int k=1; k < approximate_candidate.size(); ++k)
-            // {
-            //     min_val = min_val < approximate_candidate[k] ? min_val : approximate_candidate[k];
-            // }
-            // approximate_cands[i] = min_val;
+            int min_val = approximate_candidate[0];
+            for (int k=1; k < approximate_candidate.size(); ++k)
+            {
+                min_val = min_val < approximate_candidate[k] ? min_val : approximate_candidate[k];
+            }
+            approximate_cands[i] = min_val;
         }
 
         ftime(&end_t);
