@@ -3,5 +3,5 @@ WHERE
 {
   ?S  <http://swat.cse.lehigh.edu/onto/univ-bench.owl#advisor>  ?T .
   ?S  <http://swat.cse.lehigh.edu/onto/univ-bench.owl#undergraduateDegreeFrom>  ?X .
-  ?T  <PU1>  <http://www.University111.edu>  .
+  ?T  ?P  <http://www.University111.edu>  .
 }
