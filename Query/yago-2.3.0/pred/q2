@@ -4,8 +4,8 @@ WHERE {
     ?a2 <hasPreferredName> ?n2 . 
     ?a1 <diedOnDate> ?d1 . 
     ?a2 <diedOnDate> ?d2 . 
-    ?a1 <PU1> ?x . 
-    ?a2 <PU2> ?x . 
+    ?a1 ?P1 ?x . 
+    ?a2 ?P2 ?x . 
     ?a1 <hasFamilyName> "Kennedy" .
     ?a2 <hasFamilyName> "Kennedy" .
 }

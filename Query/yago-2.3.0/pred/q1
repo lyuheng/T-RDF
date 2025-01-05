@@ -4,8 +4,8 @@ WHERE {
     ?a2 <hasPreferredName> ?n2 . 
     ?a1 <wasBornIn> ?city1 . 
     ?a2 <wasBornIn> ?city2 . 
-    ?a1 <PU1> ?m . 
-    ?a2 <PU2> ?m . 
+    ?a1 ?P1 ?m . 
+    ?a2 ?P2 ?m . 
     ?a1 <hasWonPrize> <Emmy_Award> .
     ?a2 <hasWonPrize> <Emmy_Award> .
 }
