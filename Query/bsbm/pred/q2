@@ -2,5 +2,5 @@ SELECT ?v1 ?v2 ?v3
 WHERE 
 { 
   ?v1 <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/producer> ?v2 .
-  ?v1 ?P "footmark storages excitabilities linebackers" .
+  ?v1 ?P "footmark storages excitabilities linebackers"^^<http://www.w3.org/2001/XMLSchema#string> .
 }
