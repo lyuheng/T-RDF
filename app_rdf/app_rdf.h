@@ -13,7 +13,7 @@
 #include <utility>
 #include "parallelsort.h"
 
-#define TIME_THRESHOLD 100 // 10ms
+#define TIME_THRESHOLD 10 // 10ms
 #define MAX_QUERY_VERTEX 16 // restrict the max variable in query for simplicity
 
 
